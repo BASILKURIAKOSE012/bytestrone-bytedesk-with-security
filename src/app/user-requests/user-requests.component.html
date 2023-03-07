@@ -1,0 +1,150 @@
+<br>
+<div class="container">
+<div class="row">
+<div class="col-4"><button class="btn btn-success" (click)="getOpenRequestsData(0)">OPEN REQUESTS</button></div>
+<div class="col-4"><button class="btn btn-danger" (click)="getResolveRequestData(0)">RESOLVED REQUESTS</button></div>
+<div class="col-4"><button class="btn btn-primary" (click)="getCloseRequestData(0)">CLOSED REQUESTS</button></div>
+
+
+</div>
+</div>
+<br>
+<!-- <hr id="line"> -->
+<table class="table table-striped table-hover" *ngIf="showOpenRequest&&openRequestData" id="table1">
+    <thead>
+      <tr>
+        <th scope="col">REQUEST ID</th>
+        <th scope="col">REQUESTED DATE</th>
+        <th scope="col">EMPLOYEE NAME</th>
+        <th scope="col">EMPLOYEE ID</th>
+        <th scope="col">TICKET SUMMARY</th>
+        <th scope="col">DEPARTMENT</th>
+        <th scope="col">TICKET STATUS</th>
+        <th scope="col"> &nbsp; &nbsp; ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of openRequestData| paginate
+      : {
+          itemsPerPage: 10,
+          currentPage: currentPageRequestUser,
+          totalItems: countRequestUser
+        }">
+        <th scope="row">{{item.requestId}}</th>
+        <td>{{item.requestedDate}}</td>
+        <td>{{item.employeeName}}</td>
+        <td>{{item.employeeId}}</td>
+        <td>{{item.ticketSummary}}</td>
+        <td>{{item.department}}</td>
+        <td>{{item.ticketStatus}}</td>
+        <td>
+          <button class="btn btn-info" (click)="routeResolve(item)" >Action</button>
+  
+        </td>
+  
+      </tr>
+  
+    </tbody>
+    
+  </table>
+
+
+  <div *ngIf="showOpenRequest&&openRequestData"  >
+    <pagination-controls previousLabel="Previous" nextLabel="Next"
+      (pageChange)="onTableOpenRequestDataChange($event)"></pagination-controls>
+  </div>
+
+<!-- resolved requests -->
+
+<table class="table table-striped table-hover" *ngIf="showResolveRequest&&resolveRequestData"id="table1">
+    <thead>
+      <tr>
+        <th scope="col">REQUEST ID</th>
+        <th scope="col">RESOLVED DATE</th>
+        <th scope="col">EMPLOYEE NAME</th>
+        <th scope="col">EMPLOYEE ID</th>
+        <th scope="col">TICKET SUMMARY</th>
+        <th scope="col">DEPARTMENT</th>
+        <th scope="col">TICKET STATUS</th>
+        <th scope="col"> &nbsp; &nbsp; ACTION</th>
+
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of resolveRequestData| paginate
+      : {
+          itemsPerPage: 10,
+          currentPage: currentPageResolveUser,
+          totalItems: countResolveUser
+        }">
+        <th scope="row">{{item.requestId}}</th>
+        <td >{{item.resolvedDate}}</td>
+        <td>{{item.employeeName}}</td>
+        <td>{{item.employeeId}}</td>
+        <td>{{item.ticketSummary}}</td>
+        <td>{{item.department}}</td>
+        <td>{{item.ticketStatus}}</td>
+      
+        <td>
+          <button class="btn btn-info" (click)="routeResolved(item)" >View</button>
+  
+        </td>
+      </tr>
+  
+    </tbody>
+    
+  </table>
+
+
+  <div *ngIf="showResolveRequest&&resolveRequestData"  >
+    <pagination-controls previousLabel="Previous" nextLabel="Next"
+      (pageChange)="onTableResolveUserDataChange($event)"></pagination-controls>
+  </div>
+
+
+  <!-- closed requests -->
+  <table class="table table-striped table-hover" *ngIf="showCloseRequest&&closeRequestData"id="table1">
+    <thead>
+      <tr>
+        <th scope="col">REQUEST ID</th>
+        <th scope="col">RESOLVED DATE</th>
+        <th scope="col">EMPLOYEE NAME</th>
+        <th scope="col">EMPLOYEE ID</th>
+        <th scope="col">TICKET SUMMARY</th>
+        <th scope="col">DEPARTMENT</th>
+        <th scope="col">TICKET STATUS</th>
+        <th scope="col"> &nbsp; &nbsp; ACTION</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of closeRequestData| paginate
+      : {
+          itemsPerPage: 10,
+          currentPage: currentPageCloseUser,
+          totalItems: countCloseUser
+        }">
+        <th scope="row">{{item.requestId}}</th>
+        <td>{{item.resolvedDate}}</td>
+        <td>{{item.employeeName}}</td>
+        <td>{{item.employeeId}}</td>
+        <td>{{item.ticketSummary}}</td>
+        <td>{{item.department}}</td>
+        <td>{{item.ticketStatus}}</td>
+        <td>
+          <button class="btn btn-info" (click)="routeClosed(item)" >View</button>
+  
+        </td>
+  
+      </tr>
+  
+    </tbody>
+    
+  </table>
+
+
+  <div *ngIf="showCloseRequest&&closeRequestData"  >
+    <pagination-controls previousLabel="Previous" nextLabel="Next"
+      (pageChange)="onTableCloseUserDataChange($event)"></pagination-controls>
+  </div>

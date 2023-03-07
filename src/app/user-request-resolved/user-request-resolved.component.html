@@ -1,0 +1,34 @@
+<div class="container" id="requestForm">
+    <div class="row">
+        <div class="col-9">
+            <label style="color: #1F378C;font-weight: 600;" for="">REQUEST ID</label>
+            <input style="color: #1F378C;" type="text" [value]="requestedIdData.requestId" class="form-control"
+                [readOnly]="true">
+            <label style="color: #1F378C;font-weight: 600;" for="">EMPLOYEE NAME</label>
+            <input style="color: #1F378C;" type="text" [value]="requestedIdData.employeeName" class="form-control"
+                [readOnly]="true">
+            <label style="color: #1F378C;font-weight: 600;" for="">EMPLOYEE ID</label>
+            <input style="color:#1F378C;" type="text" [value]="requestedIdData.employeeId" class="form-control"
+                [readOnly]="true">
+            <div *ngFor="let item of recievedReassignedData">
+                <label for="" style="color: red;font-weight: 600;">USER INFO</label>
+                <textarea style="height: 10vh; color:red;" type="text" [value]="item.userInfo" class="form-control"
+                    [readOnly]="true"> </textarea>
+                <label for="" style="color: green;font-weight: 600;">ADMIN INFO</label>
+                <textarea type="text" style="color:green" class="form-control" [value]="item.adminInfo"
+                    [readOnly]="true" name="" id=""></textarea>
+            </div>
+            <label for="" style="color:red;font-weight: 600;">USER INFO</label>
+            <textarea style="color: red;" type="text" [value]="requestedIdData.ticketDescription" class="form-control"
+                [readOnly]="true" size="50"></textarea>
+            <label for="" style="color:green;font-weight: 600;">ADMIN INFO</label>
+            <textarea style="height: 10vh;color:green" type="text" [value]="requestedIdData.info" class="form-control"
+                [readOnly]="true"> </textarea>
+
+            <br>
+
+            &nbsp; <button class="btn btn-danger" routerLink="/home/user-requests"> Back</button>
+
+        </div>
+    </div>
+</div>

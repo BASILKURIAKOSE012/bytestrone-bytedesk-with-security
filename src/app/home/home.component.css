@@ -1,0 +1,53 @@
+
+
+#header{
+    width: 82vw;
+    height: 10vh;
+   
+    margin-left: 18vw
+}
+#navbar{
+    width: 18vw;
+    height: 100vh;
+    margin-top: -10vh;
+
+   
+}
+#content{
+    width: auto;
+    height: auto;
+    background-color:white;
+    margin-left: 18vw;
+    margin-top: -89vh;
+    
+}
+ #home{
+width: auto;
+} 
+.c1{
+    background-color:crimson;
+}
+.c2{
+    background-color: #1F378C; 
+}
+.c3{
+    background-color:burlywood
+}
+.c4{
+
+    background-color: #D9D9D6;
+
+}
+
+
+
+     @media  (max-width:991px){
+        #navbar{
+            height: 100vh;
+        }
+         
+        #header{
+    width: 100%;
+    height: auto;
+        } 
+    } 

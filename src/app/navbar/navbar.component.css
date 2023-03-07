@@ -1,0 +1,49 @@
+#image{
+    margin-top: 5vh;
+    width: 15vw;
+}
+#home{
+    margin-top: 50px;
+    color: white;
+    margin-left: 1vw;
+    cursor: pointer;
+}
+#bytedesk{
+    color: white;
+    margin-left: 1vw;
+    cursor: pointer;
+}
+#settings{
+    margin-top: 40vh;
+    color: white;
+    margin-left: 1vw;
+    cursor: pointer;
+}
+#logout{
+    color: white;
+    margin-left: 1vw;
+    cursor: pointer;
+  
+}
+#copyRight{
+    margin-top: 10vh;
+    font-size:x-small;
+    color: white;
+    margin-left: 5vw ;
+}
+#rights{
+    margin-left: 25px;
+}
+#theme{
+    margin-left: 1vw;
+}
+@media (max-width: 991px){
+    #copyRight{
+       
+        display: none;
+    }
+    #rights{
+        margin-left: 25px;
+    }
+ 
+}
